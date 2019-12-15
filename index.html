@@ -350,125 +350,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/11/%E5%AD%A6%E4%B9%A0Matlab%EF%BC%88%E4%B8%80%EF%BC%89/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Noire">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/joker.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Noire'Blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/12/11/%E5%AD%A6%E4%B9%A0Matlab%EF%BC%88%E4%B8%80%EF%BC%89/" itemprop="url">学习Matlab（一）</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-11T15:35:49+08:00">
-                2019-12-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/MyFirstBlog/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -540,7 +421,107 @@
       
         
           
-            <p>This is my first blog,I will test funtions in it.</p>
+            <h1 id="桌面入门知识"><a href="#桌面入门知识" class="headerlink" title="桌面入门知识"></a>桌面入门知识</h1><blockquote>
+<p><strong>创建变量</strong></p>
+</blockquote>
+<p>Matlab将变量添加到工作区，并在命令行显示结果。</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">a=<span class="number">1</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">b=<span class="number">2</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">c=a+b</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">d=cos(a)</span></pre></td></tr></table></figure>
+
+<p>如果未指定输出变量， 便使用默认ans变量</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">sin(a)</span></pre></td></tr></table></figure>
+
+<p>如果以分号结束，不会再命令行显示输出结果</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">e&#x3D;a*b;</span></pre></td></tr></table></figure>
+
+<h1 id="矩阵和数组"><a href="#矩阵和数组" class="headerlink" title="矩阵和数组"></a>矩阵和数组</h1><blockquote>
+<p><strong>数组创建</strong></p>
+</blockquote>
+<ul>
+<li><p>行向量数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">a&#x3D;[1 2 3 4]</span></pre></td></tr></table></figure>
+</li>
+<li><p>列向量数组</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">a&#x3D;[1;2;3;4]</span></pre></td></tr></table></figure>
+</li>
+<li><p>其他：ones，zeros，rand等函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">z&#x3D;zeros(5,1) &#x2F;&#x2F;创建一个5行1列的矩阵</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">x&#x3D;rand(3)  &#x2F;&#x2F;创建一个3阶随机数方阵</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">y&#x3D;rand(3,5,2);	&#x2F;&#x2F;创建2个3行5列随机数矩阵</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p><strong>矩阵和数组运算</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">a+10	&#x2F;&#x2F;矩阵的数都加10</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">a&#96;		&#x2F;&#x2F;转置矩阵</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">inv(a)	&#x2F;&#x2F;逆矩阵</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">p&#x3D;a*inv(a) 		&#x2F;&#x2F;矩阵乘法</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">p&#x3D;a.*a 		&#x2F;&#x2F;点乘</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">a.^3		&#x2F;&#x2F;幂乘</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>串联</strong></p>
+</blockquote>
+<ul>
+<li><p>水平串联</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A&#x3D;[a,a]</span></pre></td></tr></table></figure>
+</li>
+<li><p>垂直串联</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A&#x3D;[a;a]</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<blockquote>
+<p><strong>复数</strong></p>
+</blockquote>
+<h1 id="数组索引"><a href="#数组索引" class="headerlink" title="数组索引"></a>数组索引</h1><p>以4阶幻方矩阵为例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A&#x3D;magic(4)</span></pre></td></tr></table></figure>
+
+<ul>
+<li>直接引用</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A（4，2）</span></pre></td></tr></table></figure>
+
+<ul>
+<li>线性索引</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A（8）</span></pre></td></tr></table></figure>
+
+<ul>
+<li>引用多组元素时</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A（1：3，2）	&#x2F;&#x2F;引用1到3行的第2列元素  列坐标不能省略</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">A(3,:)		&#x2F;&#x2F;单独的冒号表示指定该行（列）所有元素</span></pre></td></tr></table></figure>
+
+<ul>
+<li>创建等距向量</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">B&#x3D;数值：距离：最大值</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">如B&#x3D;10：10：100</span></pre></td></tr></table></figure>
+
+<h1 id="工作区变量"><a href="#工作区变量" class="headerlink" title="工作区变量"></a>工作区变量</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">whos	&#x2F;&#x2F;查看工作区内容</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">save myfile.mat	&#x2F;&#x2F;保存数据</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">clear	&#x2F;&#x2F;清楚变量</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">load myfile.mat 	&#x2F;&#x2F;加载数据</span></pre></td></tr></table></figure>
+
+<h1 id="文本和字符"><a href="#文本和字符" class="headerlink" title="文本和字符"></a>文本和字符</h1><blockquote>
+<p><strong>字符串</strong></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">t&#x3D;&quot;Hello,world&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">s&#x3D;[&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">d&#x3D;[&quot;a&quot;;&quot;b&quot;;&quot;c&quot;]</span></pre></td></tr></table></figure>
+
+<blockquote>
+<p>字符</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">seq&#x3D;&#39;GTA&#39;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">seq2&#x3D;[seq &#39;AAT&#39;]	&#x2F;&#x2F;串联数组</span></pre></td></tr></table></figure>
+
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1><ul>
+<li><p>有参函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">A&#x3D;[1 3 5]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">max(A)		&#x2F;&#x2F;找到A矩阵中的最大值</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">maxA&#x3D;max（A）	&#x2F;&#x2F;返回输出值</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">[maxA,loacation] &#x3D; max(A)	&#x2F;&#x2F;当有多个输出参数时，括在方括号中</span></pre></td></tr></table></figure>
+</li>
+<li><p>无参函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">clc   	&#x2F;&#x2F;直接键入函数名，该函数表示清空命令行窗口</span></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h1 id="二维图和三维图"><a href="#二维图和三维图" class="headerlink" title="二维图和三维图"></a>二维图和三维图</h1><h2 id="线图"><a href="#线图" class="headerlink" title="线图"></a>线图</h2><p>要创建二维线图，使用plot函数。如sinx函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">x&#x3D;0:pi&#x2F;100:2*pi;	&#x2F;&#x2F;创建一个等距向量组</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">y&#x3D;sin(x);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">plot(x,y)	&#x2F;&#x2F;画出sinx图像</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;添加标题</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">xlabel(‘x’)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">ylabel(&#39;y&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">title(&#39;Plot of the Sine Function&#39;)</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">legend(&#39;sin&#39;,&#39;cos&#39;)		&#x2F;&#x2F;右上角添加线条说明</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;线条设定</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">plot(&#39;x&#39;,&#39;y&#39;,&#39;r--&#39;);	&#x2F;&#x2F;第一个表示颜色，第二个表示样式，如‘g:.&quot;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">&#x2F;&#x2F;添加保存图窗</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">hold on		&#x2F;&#x2F;当有多条函数线时使用</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">hodl off	&#x2F;&#x2F;退出hold on状态</span></pre></td></tr></table></figure>
+
+<h2 id="三维绘图"><a href="#三维绘图" class="headerlink" title="三维绘图"></a>三维绘图</h2><p>创建三维绘图，使用suft函数或者mesh函数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">[X,Y] &#x3D; meshgrid(-2:.2:2);                                </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">Z &#x3D; X .* exp(-X.^2 - Y.^2);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">surf(X,Y,Z)		&#x2F;&#x2F;该函数使用颜色显示</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">mesh(X,Y,Z)		&#x2F;&#x2F;该函数仅用颜色标记</span></pre></td></tr></table></figure>
+
+<h2 id="子图"><a href="#子图" class="headerlink" title="子图"></a>子图</h2><p>使用subplot函数可以在同一个窗口显示多个绘图</p>
+<p> <code>subplot</code> 的前两个输入表示行数和列数。第三个表示所在的位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">t &#x3D; 0:pi&#x2F;10:2*pi</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">[X,Y,Z] &#x3D; cylinder(4*cos(t));</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">subplot(2,2,1); mesh(X); title(&#39;X&#39;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">subplot(2,2,2); mesh(Y); title(&#39;Y&#39;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">subplot(2,2,3); mesh(Z); title(&#39;Z&#39;);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">subplot(2,2,4); mesh(X,Y,Z); title(&#39;X,Y,Z&#39;);</span></pre></td></tr></table></figure>
+
 
           
         
@@ -758,7 +739,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
