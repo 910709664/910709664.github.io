@@ -228,6 +228,185 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/C#%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Noire">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/joker.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Noire'Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/26/C#%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/" itemprop="url">c#常用特性</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-26T17:40:48+08:00">
+                2020-02-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="C-在unity开发中常用的特性"><a href="#C-在unity开发中常用的特性" class="headerlink" title="C#在unity开发中常用的特性"></a>C#在unity开发中常用的特性</h1><pre><code>众所周知，C#的特性在多人开发时的便捷性与实用性得到许多开发者的喜爱，所以我在这里整理一下自己学习unity开发中一些常用的特性
+ &lt;!--more--&gt; </code></pre><p><code>[ExecuteInEditMode]</code></p>
+<blockquote>
+<p><strong>在编辑模式下运行该“脚本程序”</strong></p>
+</blockquote>
+<p><code>[DisallowMultipleComponent]</code></p>
+<blockquote>
+<p><strong>不允许该脚本在同一组件中添加多次</strong></p>
+</blockquote>
+<p><code>[System.Obsolete]</code></p>
+<blockquote>
+<p><strong>表示该方法已过时</strong> 在项目中多用于提醒队友更改相似的方法</p>
+</blockquote>
+<p><code>[SelectionBase]</code></p>
+<blockquote>
+<p><strong>通过挂载在父物体上可以直接选中父物体</strong></p>
+</blockquote>
+<p><code>[HelpURL(&quot;链接&quot;)]</code></p>
+<blockquote>
+<p><strong>组件上会出现一个问号（帮助),点击可跳转到该页面，通常为项目学习地址</strong></p>
+</blockquote>
+<p><code>[HideInInspector]</code></p>
+<blockquote>
+<p><strong>隐藏公共变量</strong></p>
+</blockquote>
+<p><code>using UnityEditor;
+ using UnityEditor.Callbacks;
+ [OnOpenAsset(序号)]</code></p>
+<blockquote>
+<p><strong>函数执行顺序</strong></p>
+</blockquote>
+<p><code>[DefaultExecutionOrder(序号)]</code></p>
+<blockquote>
+<p><strong>脚本执行顺序</strong></p>
+</blockquote>
+<p><code>[Header(&quot;描述&quot;)]</code></p>
+<blockquote>
+<p><strong>在变量头顶增加分类标题</strong></p>
+</blockquote>
+<p><code>[Tooltip(&quot;介绍&quot;)]</code></p>
+<blockquote>
+<p><strong>给变量添加解释，当鼠标停留在变量上时</strong></p>
+</blockquote>
+<p><code>[TextArea]</code></p>
+<blockquote>
+<p><strong>文本框</strong></p>
+</blockquote>
+<p><code>[SerializeField]</code></p>
+<blockquote>
+<p><strong>私有变量可视化</strong></p>
+</blockquote>
+<p><code>[MenuItem(&quot;&quot;)]</code></p>
+<blockquote>
+<p><strong>菜单栏</strong>必须是静态方法</p>
+</blockquote>
+<p><code>[CustomEditor(typeof(脚本名称))]</code></p>
+<blockquote>
+<p><strong>方法继承自Editor，重写OnInspectorGUI方法</strong></p>
+</blockquote>
+<p>详细请看<a href="https://www.bilibili.com/video/av91073680" target="_blank" rel="noopener">https://www.bilibili.com/video/av91073680</a></p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/08/MATLAB%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -524,7 +703,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -532,6 +711,15 @@
 
             
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">标签</span>
+                
+              </div>
             
 
           </nav>
