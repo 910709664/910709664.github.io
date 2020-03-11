@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Noire&#39;Blog">
 <meta property="og:description" content="观察者模式前言最近对学习方向越发迷惘，什么方向都干了一点，但是缺少人带领的情况下一直碰壁，感觉自己似乎什么都学不好。直到最近我在Youtube上关注了一个博主，让我重新看待游戏模式并且用c#特有的语法去表达出来，对于一个没有c++基础的人当时看游戏模式跟看天书没什么区别，所有东西都要重新理解一遍，看完之后也只是大概知道是怎么运作，但从未上手编程过。直到现在我开始写博客记录c#写游戏设计模式。有点啰">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-11T08:54:48.899Z">
+<meta property="og:updated_time" content="2020-03-11T08:58:08.925Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -298,6 +298,8 @@
 
       
         <h1 id="观察者模式"><a href="#观察者模式" class="headerlink" title="观察者模式"></a>观察者模式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>最近对学习方向越发迷惘，什么方向都干了一点，但是缺少人带领的情况下一直碰壁，感觉自己似乎什么都学不好。直到最近我在Youtube上关注了一个博主，让我重新看待游戏模式并且用c#特有的语法去表达出来，对于一个没有c++基础的人当时看游戏模式跟看天书没什么区别，所有东西都要重新理解一遍，看完之后也只是大概知道是怎么运作，但从未上手编程过。直到现在我开始写博客记录c#写游戏设计模式。有点啰嗦了，让我们开始吧。</p>
+<a id="more"></a> 
+
 <h2 id="消息机制"><a href="#消息机制" class="headerlink" title="消息机制"></a>消息机制</h2><p>在接触观察者模式前，我已经通过游戏框架搭建这门课初步了解到消息机制。可以说消息机制是观察者模式的雏形。通过简单的几行代码我们来看一下消息机制是如何实现的。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">public class MsgDisapatcher:&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">    protected static Dictionary&lt;string, Action&lt;object&gt;&gt; RegisteredMsgs &#x3D; </span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">    new Dictionary&lt;string, Action&lt;object&gt;&gt;();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">    public static void Register(string msgName, Action&lt;object&gt; onMsgReceived);	&#x2F;&#x2F;注册消息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">    public static void UnRegister(string msgName);	&#x2F;&#x2F;注销消息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">    public static void Send(string msgName,object data);	&#x2F;&#x2F;发送消息</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
 <p>然后我们在需要发消息的类中开始消息注册和发送的编码</p>
