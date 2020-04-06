@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="c#,unity," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -79,15 +79,14 @@
 
 
 
-<meta name="description" content="C#在unity开发中常用的特性众所周知，C#的特性在多人开发时的便捷性与实用性得到许多开发者的喜爱，所以我在这里整理一下自己学习unity开发中一些常用的特性">
-<meta name="keywords" content="c#,unity">
+<meta name="description" content="序列模式前言距离上次发博客已经半个月了(懒狗实锤)，这两天就把书中提到而视频中没提到的剩下设计模式补完。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="c#常用特性">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;02&#x2F;26&#x2F;C#%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7&#x2F;index.html">
+<meta property="og:title" content="序列模式">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;07&#x2F;%E5%BA%8F%E5%88%97%E6%A8%A1%E5%BC%8F&#x2F;index.html">
 <meta property="og:site_name" content="Noire&#39;Blog">
-<meta property="og:description" content="C#在unity开发中常用的特性众所周知，C#的特性在多人开发时的便捷性与实用性得到许多开发者的喜爱，所以我在这里整理一下自己学习unity开发中一些常用的特性">
+<meta property="og:description" content="序列模式前言距离上次发博客已经半个月了(懒狗实锤)，这两天就把书中提到而视频中没提到的剩下设计模式补完。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-02-26T12:32:59.433Z">
+<meta property="og:updated_time" content="2020-04-06T19:05:40.444Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -118,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/02/26/C#常用特性/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/04/07/序列模式/"/>
 
 
 
 
 
-  <title>c#常用特性 | Noire'Blog</title>
+  <title>序列模式 | Noire'Blog</title>
   
 
 
@@ -231,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/02/26/C#%E5%B8%B8%E7%94%A8%E7%89%B9%E6%80%A7/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/07/%E5%BA%8F%E5%88%97%E6%A8%A1%E5%BC%8F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Noire">
@@ -248,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">c#常用特性</h1>
+          <h1 class="post-title" itemprop="name headline">序列模式</h1>
         
 
         <div class="post-meta">
@@ -260,8 +259,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-02-26T17:40:48+08:00">
-                2020-02-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-07T02:49:48+08:00">
+                2020-04-07
               </time>
             
 
@@ -298,67 +297,21 @@
       
 
       
-        <h1 id="C-在unity开发中常用的特性"><a href="#C-在unity开发中常用的特性" class="headerlink" title="C#在unity开发中常用的特性"></a>C#在unity开发中常用的特性</h1><pre><code>众所周知，C#的特性在多人开发时的便捷性与实用性得到许多开发者的喜爱，所以我在这里整理一下自己学习unity开发中一些常用的特性</code></pre><a id="more"></a> 
-
-<p><code>[ExecuteInEditMode]</code></p>
-<blockquote>
-<p><strong>在编辑模式下运行该“脚本程序”</strong></p>
-</blockquote>
-<p><code>[DisallowMultipleComponent]</code></p>
-<blockquote>
-<p><strong>不允许该脚本在同一组件中添加多次</strong></p>
-</blockquote>
-<p><code>[System.Obsolete]</code></p>
-<blockquote>
-<p><strong>表示该方法已过时</strong> 在项目中多用于提醒队友更改相似的方法</p>
-</blockquote>
-<p><code>[SelectionBase]</code></p>
-<blockquote>
-<p><strong>通过挂载在父物体上可以直接选中父物体</strong></p>
-</blockquote>
-<p><code>[HelpURL(&quot;链接&quot;)]</code></p>
-<blockquote>
-<p><strong>组件上会出现一个问号（帮助),点击可跳转到该页面，通常为项目学习地址</strong></p>
-</blockquote>
-<p><code>[HideInInspector]</code></p>
-<blockquote>
-<p><strong>隐藏公共变量</strong></p>
-</blockquote>
-<p><code>using UnityEditor;
- using UnityEditor.Callbacks;
- [OnOpenAsset(序号)]</code></p>
-<blockquote>
-<p><strong>函数执行顺序</strong></p>
-</blockquote>
-<p><code>[DefaultExecutionOrder(序号)]</code></p>
-<blockquote>
-<p><strong>脚本执行顺序</strong></p>
-</blockquote>
-<p><code>[Header(&quot;描述&quot;)]</code></p>
-<blockquote>
-<p><strong>在变量头顶增加分类标题</strong></p>
-</blockquote>
-<p><code>[Tooltip(&quot;介绍&quot;)]</code></p>
-<blockquote>
-<p><strong>给变量添加解释，当鼠标停留在变量上时</strong></p>
-</blockquote>
-<p><code>[TextArea]</code></p>
-<blockquote>
-<p><strong>文本框</strong></p>
-</blockquote>
-<p><code>[SerializeField]</code></p>
-<blockquote>
-<p><strong>私有变量可视化</strong></p>
-</blockquote>
-<p><code>[MenuItem(&quot;&quot;)]</code></p>
-<blockquote>
-<p><strong>菜单栏</strong>必须是静态方法</p>
-</blockquote>
-<p><code>[CustomEditor(typeof(脚本名称))]</code></p>
-<blockquote>
-<p><strong>方法继承自Editor，重写OnInspectorGUI方法</strong></p>
-</blockquote>
-<p>详细请看<a href="https://www.bilibili.com/video/av91073680" target="_blank" rel="noopener">https://www.bilibili.com/video/av91073680</a></p>
+        <h1 id="序列模式"><a href="#序列模式" class="headerlink" title="序列模式"></a>序列模式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>距离上次发博客已经半个月了(懒狗实锤)，这两天就把书中提到而视频中没提到的剩下设计模式补完。</p>
+<a id="more"></a>
+<h2 id="双缓冲模式"><a href="#双缓冲模式" class="headerlink" title="双缓冲模式"></a>双缓冲模式</h2><p>这是一个用来模拟瞬间发生的事情的一个模式。这其中设计了硬件驱动与软件设计模式冲突会经常用到的模式，举个例子，在游戏中我们经常需要渲染大量的场景特效，此时玩家需要看到一个快速连续变换的场景，然后驱动不断读取数据然后显示在玩家屏幕上，此时的数据是存储在<strong>帧缓冲</strong>中，如果读取的时候我们往帧缓冲中写入数据，硬件驱动比较好的情况下，往往会在写入之前完成读取，从而造成场景缺失或者出现BUG。所以我们需要将读取与写入<strong>分开操作</strong>，这就是双缓冲出现的理由，在如今的游戏图形API上都已经有封装好的函数对象，我们都可以直接调用。</p>
+<ul>
+<li>你可以在几乎每个图形API中找到双缓冲模式。举个例子，OpenGL有swapBuffers()，Direct3D有”swap chains”, Microsoft的XNA框架有endDraw()方法。</li>
+</ul>
+<p>当然作者也有展示简易代码，由于是c++的指针操作，放在c#上其实就是对象作为引用，下面用C￥改写了一段，如果写的有错请见谅</p>
+<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">FrameBuffer</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">FrameBuffer</span>(<span class="params"></span>)</span>&#123;clear();&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">char</span>[] pixel;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">clear</span>(<span class="params"></span>)</span>&#123;<span class="comment">//清空缓存&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">draw</span>(<span class="params"></span>)</span>&#123;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Scene</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> FrameBuffer _buffer[<span class="number">2</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> FrameBuffer _current=_buffer[<span class="number">0</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">private</span> FrameBuffer _next=_buffer[<span class="number">1</span>];</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Swap</span>(<span class="params"></span>)</span>&#123;<span class="comment">//current对象与next对象交换&#125;</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Draw</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">		_next.clear();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">		_next.draw();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">15</span></pre></td><td class="code"><pre><span class="line">		Swap();</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">16</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">17</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
+<p>这样驱动就会现在next对象上渲染直到完成之后在渲染与current对象交换数据后的next对象渲染，操作上没有撕裂感</p>
+<h2 id="游戏循环"><a href="#游戏循环" class="headerlink" title="游戏循环"></a>游戏循环</h2><p>这个模式其实已经封装在MonoBehaviour类中的Update方法中，比起实现方法，我觉得我们更应该关注游戏循环中的实现顺寻，下面放一张Unity官方文档的图片，这张图片已经很详细的解释了游戏循环中的序列。<br>！<a href="序列模式/1.png"></a></p>
+<p>！<a href="序列模式/2.png"></a></p>
+<p>！<a href="序列模式/3.png"></a></p>
+<h2 id="更新方法"><a href="#更新方法" class="headerlink" title="更新方法"></a>更新方法</h2><p>这个模式其实也是封装好了。不过最近Unity也在使用ECS框架来使用<strong>组件模式</strong>来进行更新，这也就是把渲染，AI，物理都分开Update而不是在一个对象实体类中，感兴趣的可以自行了解。</p>
+<h2 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h2><p>本次的序列模式更多注重的是<strong>序列</strong>，然而现代的游戏引擎已经帮我们把方法实现好了，所以我们其实只要在了解原理的基础上搞清楚<strong>序列的渲染前后顺序</strong>，这样我们在更新对象类时能减少因为渲染顺序而出现的各种BUG，其实再写项目时就遇见过因为Awake函数与Start函数的先后问题而导致的组件消失的问题，所以这个问题一定要好好重视啊！</p>
+<p>以上灵感感悟来自：<a href="https://gpp.tkchu.me/sequencing-patterns.html" target="_blank" rel="noopener">https://gpp.tkchu.me/sequencing-patterns.html</a></p>
 
       
     </div>
@@ -374,14 +327,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/c/" rel="tag"># c#</a>
-          
-            <a href="/tags/unity/" rel="tag"># unity</a>
-          
-        </div>
-      
 
       
       
@@ -391,8 +336,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/12/08/MATLAB%E5%AD%A6%E4%B9%A0%EF%BC%88%E4%B8%80%EF%BC%89/" rel="next" title="MatLabLearn（一）">
-                <i class="fa fa-chevron-left"></i> MatLabLearn（一）
+              <a href="/2020/03/18/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" rel="next" title="工厂模式">
+                <i class="fa fa-chevron-left"></i> 工厂模式
               </a>
             
           </div>
@@ -400,10 +345,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/11/%E8%A7%82%E5%AF%9F%E8%80%85%E6%A8%A1%E5%BC%8F/" rel="prev" title="观察者模式">
-                观察者模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -556,7 +497,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#C-在unity开发中常用的特性"><span class="nav-number">1.</span> <span class="nav-text">C#在unity开发中常用的特性</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#序列模式"><span class="nav-number">1.</span> <span class="nav-text">序列模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双缓冲模式"><span class="nav-number">1.2.</span> <span class="nav-text">双缓冲模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#游戏循环"><span class="nav-number">1.3.</span> <span class="nav-text">游戏循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#更新方法"><span class="nav-number">1.4.</span> <span class="nav-text">更新方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后记"><span class="nav-number">1.5.</span> <span class="nav-text">后记</span></a></li></ol></li></ol></div>
             
 
           </div>
