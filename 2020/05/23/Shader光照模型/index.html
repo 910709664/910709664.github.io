@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="谦卑模式前言关于这个模式其实能说的不多，就是一个单元测试，不过在接触代码的时候有点收获就写一下吧。">
+<meta name="description" content="Unity Shader中的光照模型BRDF光照模型标准光照模型自发光$$Cemissive&#x3D;Memissive$$ 环境光$$Cambient&#x3D;Gambient$$ 漫反射兰伯特定律$$Cdiffuse&#x3D;(Clight·Mdiffuse)max(0,n,l)$$半兰伯特光照模型$$Cdiffuse&#x3D;(Clight·Mdiffuse)(0.5(n·l)+0.5)$$ 高光反射Phone模型$$Cs">
 <meta property="og:type" content="article">
-<meta property="og:title" content="谦卑的对象模式">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;03&#x2F;17&#x2F;%E8%B0%A6%E5%8D%91%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="Shader光照模型">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;23&#x2F;Shader%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B&#x2F;index.html">
 <meta property="og:site_name" content="Noire&#39;Blog">
-<meta property="og:description" content="谦卑模式前言关于这个模式其实能说的不多，就是一个单元测试，不过在接触代码的时候有点收获就写一下吧。">
+<meta property="og:description" content="Unity Shader中的光照模型BRDF光照模型标准光照模型自发光$$Cemissive&#x3D;Memissive$$ 环境光$$Cambient&#x3D;Gambient$$ 漫反射兰伯特定律$$Cdiffuse&#x3D;(Clight·Mdiffuse)max(0,n,l)$$半兰伯特光照模型$$Cdiffuse&#x3D;(Clight·Mdiffuse)(0.5(n·l)+0.5)$$ 高光反射Phone模型$$Cs">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-03-17T09:31:24.163Z">
+<meta property="og:updated_time" content="2020-05-23T08:35:14.089Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/03/17/谦卑的对象模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/23/Shader光照模型/"/>
 
 
 
 
 
-  <title>谦卑的对象模式 | Noire'Blog</title>
+  <title>Shader光照模型 | Noire'Blog</title>
   
 
 
@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/17/%E8%B0%A6%E5%8D%91%E7%9A%84%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/05/23/Shader%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Noire">
@@ -247,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">谦卑的对象模式</h1>
+          <h1 class="post-title" itemprop="name headline">Shader光照模型</h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-17T16:55:24+08:00">
-                2020-03-17
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-05-23T16:18:01+08:00">
+                2020-05-23
               </time>
             
 
@@ -297,16 +297,10 @@
       
 
       
-        <h1 id="谦卑模式"><a href="#谦卑模式" class="headerlink" title="谦卑模式"></a>谦卑模式</h1><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>关于这个模式其实能说的不多，就是一个单元测试，不过在接触代码的时候有点收获就写一下吧。</p>
-<a id="more"></a> 
-
-<h2 id="单元测试"><a href="#单元测试" class="headerlink" title="单元测试"></a>单元测试</h2><p>做游戏时经常会边写代码进行测试，对于主角或者说是单个对象还好，很容易通过运行检测出来，然而对于大量的对象，比如我要测试大量敌人各种行为，那么再点击测试运行不仅更消耗时间，也不好测试出来，于是将测试与运行隔离开来进行测试的就叫做单元测试。通过编写测试代码然后直接运行代码而不是通过编辑器运行游戏来测试是否通过。而在单元测试中有一个很实用的模式就叫做谦卑模式（humble object）</p>
-<h2 id="如何实现"><a href="#如何实现" class="headerlink" title="如何实现"></a>如何实现</h2><p>谦卑模式更多是通过<strong>接口</strong>实现，开放接口中的各类对象属性来生成需要测试的对象，接下来介绍一个例子来说明如果通过接口来完成单元测试。<br>假如我们要测试一群鸟飞行时的高度限制，我们就先声明一个接口：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">interface</span> <span class="title">IBird</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	Vector3 Position&#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">float</span> MaxHeight&#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">	<span class="keyword">float</span> MinHeight&#123;<span class="keyword">get</span>;<span class="keyword">set</span>;&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p>接着我们创建好测试编辑文件夹，在里面新建一个BirdTest的脚本：</p>
-<figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">BirdTest</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">	[<span class="meta">Test</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BirdStopAtMaxHeight</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">5</span></pre></td><td class="code"><pre><span class="line">		IBird bird =<span class="keyword">new</span> IBird()&#123;MaxHeight=<span class="number">3</span>,MinHeight=<span class="number">-3</span>&#125;;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">6</span></pre></td><td class="code"><pre><span class="line">		BirdController birdController =<span class="keyword">new</span> BirdController(bitd);<span class="comment">//里面包含一个构造函数和一个移动方法</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">7</span></pre></td><td class="code"><pre><span class="line">		birdController.Move(<span class="number">10f</span>);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">8</span></pre></td><td class="code"><pre><span class="line">		Assert.AreEqual(<span class="number">3f</span>,bird.Position.y);</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">9</span></pre></td><td class="code"><pre><span class="line">	[<span class="meta">Test</span>]</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">10</span></pre></td><td class="code"><pre><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">BirdStopAtMinHeight</span>(<span class="params"></span>)</span>&#123;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">11</span></pre></td><td class="code"><pre><span class="line">		~.......</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">12</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">13</span></pre></td><td class="code"><pre><span class="line">	&#125;</span></pre></td></tr><tr><td class="gutter"><pre><span class="line">14</span></pre></td><td class="code"><pre><span class="line">&#125;</span></pre></td></tr></table></figure>
-<p>然后我们就打开测试窗口Run All一下，过一会儿就会发现各个脚本前面有√的符号则表示测试没有出错，如果有人不小心改动了<strong>移动方法</strong>那么这个符合逻辑的测试就会出现报错</p>
-<h2 id="一些收获"><a href="#一些收获" class="headerlink" title="一些收获"></a>一些收获</h2><p>这个模式确实没什么好说的，不过里面的想法确实值得吸收，比如对<strong>接口的实例化</strong>，之前其实在项目也运用到，不过那时候还并不是特别明白其中的原理，只是觉得好像有道理的样子（感谢主程没有嫌弃我），比起一个抽象基类，接口可以隐藏类的类型，声明起来十分方便。而且接口可一次实现多个类，比起抽象基类的单继承来说实用性更广，简单来说，接口就是让实例和实现类的耦合度降低，让程序更加容易扩展且规范。<br>以上感悟内容皆来自于<a href="https://www.youtube.com/watchv=3O_rpTWdGps&amp;list=PLB5_EOMkLx_VOmnIytx37lFMiajPHppmj&amp;index=5&amp;t=1s" target="_blank" rel="noopener">https://www.youtube.com/watchv=3O_rpTWdGps&amp;list=PLB5_EOMkLx_VOmnIytx37lFMiajPHppmj&amp;index=5&amp;t=1s</a></p>
+        <h1 id="Unity-Shader中的光照模型"><a href="#Unity-Shader中的光照模型" class="headerlink" title="Unity Shader中的光照模型"></a>Unity Shader中的光照模型</h1><h2 id="BRDF光照模型"><a href="#BRDF光照模型" class="headerlink" title="BRDF光照模型"></a>BRDF光照模型</h2><h2 id="标准光照模型"><a href="#标准光照模型" class="headerlink" title="标准光照模型"></a>标准光照模型</h2><h3 id="自发光"><a href="#自发光" class="headerlink" title="自发光"></a>自发光</h3><p>$$<br>Cemissive=Memissive<br>$$</p>
+<h3 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h3><p>$$<br>Cambient=Gambient<br>$$</p>
+<h3 id="漫反射"><a href="#漫反射" class="headerlink" title="漫反射"></a>漫反射</h3><p>兰伯特定律<br>$$<br>Cdiffuse=(Clight·Mdiffuse)max(0,n,l)<br>$$<br>半兰伯特光照模型<br>$$<br>Cdiffuse=(Clight·Mdiffuse)(0.5(n·l)+0.5)<br>$$</p>
+<h3 id="高光反射"><a href="#高光反射" class="headerlink" title="高光反射"></a>高光反射</h3><p>Phone模型<br>$$<br>Cspecular=(Clight·Mspecular)max(0,v,r)^m<br>$$<br>$$<br>r=reflect(i,n)  i为入射方向，n为法线方向<br>$$<br>Blinn模型<br>$$<br>h=v+l/(|v+l|)<br>$$<br>$$<br>Cspecular=(Clight·Mspecular)max(0,n,h)^m<br>$$</p>
 
       
     </div>
@@ -331,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/03/15/%E5%91%BD%E4%BB%A4%E6%A8%A1%E5%BC%8F/" rel="next" title="命令模式">
-                <i class="fa fa-chevron-left"></i> 命令模式
+              <a href="/2020/05/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="计算机网络学习笔记">
+                <i class="fa fa-chevron-left"></i> 计算机网络学习笔记
               </a>
             
           </div>
@@ -340,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/03/18/%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F/" rel="prev" title="工厂模式">
-                工厂模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -496,7 +486,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#谦卑模式"><span class="nav-number">1.</span> <span class="nav-text">谦卑模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单元测试"><span class="nav-number">1.2.</span> <span class="nav-text">单元测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#如何实现"><span class="nav-number">1.3.</span> <span class="nav-text">如何实现</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些收获"><span class="nav-number">1.4.</span> <span class="nav-text">一些收获</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-Shader中的光照模型"><span class="nav-number">1.</span> <span class="nav-text">Unity Shader中的光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF光照模型"><span class="nav-number">1.1.</span> <span class="nav-text">BRDF光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准光照模型"><span class="nav-number">1.2.</span> <span class="nav-text">标准光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自发光"><span class="nav-number">1.2.1.</span> <span class="nav-text">自发光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境光"><span class="nav-number">1.2.2.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫反射"><span class="nav-number">1.2.3.</span> <span class="nav-text">漫反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高光反射"><span class="nav-number">1.2.4.</span> <span class="nav-text">高光反射</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
