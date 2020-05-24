@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="Unity Shader中的光照模型BRDF光照模型标准光照模型自发光$$Cemissive&#x3D;Memissive$$ 环境光$$Cambient&#x3D;Gambient$$ 漫反射兰伯特定律$$Cdiffuse&#x3D;(Clight·Mdiffuse)max(0,n,l)$$半兰伯特光照模型$$Cdiffuse&#x3D;(Clight·Mdiffuse)(0.5(n·l)+0.5)$$ 高光反射Phone模型$$Cs">
+<meta name="description" content="Unity Shader中的光照模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shader光照模型">
 <meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;05&#x2F;23&#x2F;Shader%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B&#x2F;index.html">
 <meta property="og:site_name" content="Noire&#39;Blog">
-<meta property="og:description" content="Unity Shader中的光照模型BRDF光照模型标准光照模型自发光$$Cemissive&#x3D;Memissive$$ 环境光$$Cambient&#x3D;Gambient$$ 漫反射兰伯特定律$$Cdiffuse&#x3D;(Clight·Mdiffuse)max(0,n,l)$$半兰伯特光照模型$$Cdiffuse&#x3D;(Clight·Mdiffuse)(0.5(n·l)+0.5)$$ 高光反射Phone模型$$Cs">
+<meta property="og:description" content="Unity Shader中的光照模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-23T08:35:14.089Z">
+<meta property="og:updated_time" content="2020-05-24T02:40:08.732Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -297,11 +297,13 @@
       
 
       
-        <h1 id="Unity-Shader中的光照模型"><a href="#Unity-Shader中的光照模型" class="headerlink" title="Unity Shader中的光照模型"></a>Unity Shader中的光照模型</h1><h2 id="BRDF光照模型"><a href="#BRDF光照模型" class="headerlink" title="BRDF光照模型"></a>BRDF光照模型</h2><h2 id="标准光照模型"><a href="#标准光照模型" class="headerlink" title="标准光照模型"></a>标准光照模型</h2><h3 id="自发光"><a href="#自发光" class="headerlink" title="自发光"></a>自发光</h3><p>$$<br>Cemissive=Memissive<br>$$</p>
+        <h1 id="Unity-Shader中的光照模型"><a href="#Unity-Shader中的光照模型" class="headerlink" title="Unity Shader中的光照模型"></a>Unity Shader中的光照模型</h1><a id="more"></a> 
+
+<h2 id="BRDF光照模型"><a href="#BRDF光照模型" class="headerlink" title="BRDF光照模型"></a>BRDF光照模型</h2><h2 id="标准光照模型"><a href="#标准光照模型" class="headerlink" title="标准光照模型"></a>标准光照模型</h2><h3 id="自发光"><a href="#自发光" class="headerlink" title="自发光"></a>自发光</h3><p>$$<br>Cemissive=Memissive<br>$$</p>
 <h3 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h3><p>$$<br>Cambient=Gambient<br>$$</p>
 <h3 id="漫反射"><a href="#漫反射" class="headerlink" title="漫反射"></a>漫反射</h3><p>兰伯特定律<br>$$<br>Cdiffuse=(Clight·Mdiffuse)max(0,n,l)<br>$$<br>半兰伯特光照模型<br>$$<br>Cdiffuse=(Clight·Mdiffuse)(0.5(n·l)+0.5)<br>$$</p>
 <h3 id="高光反射"><a href="#高光反射" class="headerlink" title="高光反射"></a>高光反射</h3><p>Phone模型<br>$$<br>Cspecular=(Clight·Mspecular)max(0,v,r)^m<br>$$<br>$$<br>r=reflect(i,n)  i为入射方向，n为法线方向<br>$$<br>Blinn模型<br>$$<br>h=v+l/(|v+l|)<br>$$<br>$$<br>Cspecular=(Clight·Mspecular)max(0,n,h)^m<br>$$</p>
-
+<h3 id="Unity常用函数"><a href="#Unity常用函数" class="headerlink" title="Unity常用函数"></a>Unity常用函数</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">UnityObjectToClipPos(vertex)<span class="comment">//将模型空间的坐标转换到裁剪空间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">UnityObjectToWorldNormal(v.normal)<span class="comment">//从模型空间的坐标转换世界空间的法线方向</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">UnityWorldSpaceLightDir(float4 v)<span class="comment">//从模型空间的坐标获得该点到光源的光照方向，仅向前渲染，无归一化</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">UnityWorldSpaceViewDir(float4 v)<span class="comment">//从模型空间的坐标获得该点到摄像机的观察方向</span></span></pre></td></tr></table></figure>
       
     </div>
     
@@ -486,7 +488,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-Shader中的光照模型"><span class="nav-number">1.</span> <span class="nav-text">Unity Shader中的光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF光照模型"><span class="nav-number">1.1.</span> <span class="nav-text">BRDF光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准光照模型"><span class="nav-number">1.2.</span> <span class="nav-text">标准光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自发光"><span class="nav-number">1.2.1.</span> <span class="nav-text">自发光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境光"><span class="nav-number">1.2.2.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫反射"><span class="nav-number">1.2.3.</span> <span class="nav-text">漫反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高光反射"><span class="nav-number">1.2.4.</span> <span class="nav-text">高光反射</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-Shader中的光照模型"><span class="nav-number">1.</span> <span class="nav-text">Unity Shader中的光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF光照模型"><span class="nav-number">1.1.</span> <span class="nav-text">BRDF光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准光照模型"><span class="nav-number">1.2.</span> <span class="nav-text">标准光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自发光"><span class="nav-number">1.2.1.</span> <span class="nav-text">自发光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境光"><span class="nav-number">1.2.2.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫反射"><span class="nav-number">1.2.3.</span> <span class="nav-text">漫反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高光反射"><span class="nav-number">1.2.4.</span> <span class="nav-text">高光反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity常用函数"><span class="nav-number">1.2.5.</span> <span class="nav-text">Unity常用函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
