@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="行为模式">
+<meta name="description" content="射线Physics.RaycastRayRaycastHit &#x2F;&#x2F;存储射线信息 ref out相当于c++的引用传递ref需要初始化变量out则只要在方法中初始化变量 ColliderPhysics.OverlapCircle &#x2F;&#x2F;创建一个碰撞体检测 坐标系世界坐标 右上角当局坐标 以父物体为坐标系 鼠标交互OnMouseEnter">
 <meta property="og:type" content="article">
-<meta property="og:title" content="行为模式">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;10&#x2F;%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="Unity常用">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2021&#x2F;01&#x2F;17&#x2F;Unity%E5%B8%B8%E7%94%A8&#x2F;index.html">
 <meta property="og:site_name" content="Noire&#39;Blog">
-<meta property="og:description" content="行为模式">
+<meta property="og:description" content="射线Physics.RaycastRayRaycastHit &#x2F;&#x2F;存储射线信息 ref out相当于c++的引用传递ref需要初始化变量out则只要在方法中初始化变量 ColliderPhysics.OverlapCircle &#x2F;&#x2F;创建一个碰撞体检测 坐标系世界坐标 右上角当局坐标 以父物体为坐标系 鼠标交互OnMouseEnter">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-09T16:57:38.842Z">
+<meta property="og:updated_time" content="2021-01-20T06:17:11.149Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/10/行为模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2021/01/17/Unity常用/"/>
 
 
 
 
 
-  <title>行为模式 | Noire'Blog</title>
+  <title>Unity常用 | Noire'Blog</title>
   
 
 
@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/17/Unity%E5%B8%B8%E7%94%A8/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Noire">
@@ -247,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">行为模式</h1>
+          <h1 class="post-title" itemprop="name headline">Unity常用</h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-10T00:23:29+08:00">
-                2020-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-17T14:53:27+08:00">
+                2021-01-17
               </time>
             
 
@@ -297,15 +297,11 @@
       
 
       
-        <h1 id="行为模式"><a href="#行为模式" class="headerlink" title="行为模式"></a>行为模式</h1><a id="more"></a>
-<h2 id="字节码"><a href="#字节码" class="headerlink" title="字节码"></a>字节码</h2><p>和原型模式类似，<strong>用数据存储行为</strong>，便于修改数据。但其实我也不是特别清楚，里面提到了lua是一种基于<strong>寄存器</strong>的虚拟机，看来还需要学习lua之后回头再看看。</p>
-<h2 id="子类沙箱"><a href="#子类沙箱" class="headerlink" title="子类沙箱"></a>子类沙箱</h2><p><strong>用一类基类提供的操作供子类使用</strong>。这是一种十分常见且常用的模式，甚至我们都不知道这算一种模式封装。不过即使是这样，也有一些技巧在里面。</p>
-<ul>
-<li>首先要积极利用<strong>辅助类</strong>来管理基类和子类的行为。比如声音播放器和动画播放器等我们应该用另外一个辅助类，减少耦合度</li>
-<li>善于利用基类<strong>构造器</strong>获得状态。在之前所做的设计模式中经常能看到传递一个对象来进行构造，且经常会利用到base关键字</li>
-<li>让某些状态<strong>静态化</strong>。例如粒子系统，这样就可以节省一部分内存</li>
-</ul>
-<h2 id="类型对象"><a href="#类型对象" class="headerlink" title="类型对象"></a>类型对象</h2><p>类似与享元模式，通过数据来生成<strong>相似</strong>品种的类，适用于行为变化不大的一些类，但缺点也很明显，无法对其行为进行扩展</p>
+        <h1 id="射线"><a href="#射线" class="headerlink" title="射线"></a>射线</h1><p>Physics.Raycast<br>Ray<br>RaycastHit //存储射线信息</p>
+<h1 id="ref-out"><a href="#ref-out" class="headerlink" title="ref out"></a>ref out</h1><p>相当于c++的引用传递<br>ref需要初始化变量<br>out则只要在方法中初始化变量</p>
+<h1 id="Collider"><a href="#Collider" class="headerlink" title="Collider"></a>Collider</h1><p>Physics.OverlapCircle //创建一个碰撞体检测</p>
+<h1 id="坐标系"><a href="#坐标系" class="headerlink" title="坐标系"></a>坐标系</h1><p>世界坐标 右上角<br>当局坐标 以父物体为坐标系</p>
+<h1 id="鼠标交互"><a href="#鼠标交互" class="headerlink" title="鼠标交互"></a>鼠标交互</h1><p>OnMouseEnter</p>
 
       
     </div>
@@ -330,8 +326,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/07/%E5%BA%8F%E5%88%97%E6%A8%A1%E5%BC%8F/" rel="next" title="序列模式">
-                <i class="fa fa-chevron-left"></i> 序列模式
+              <a href="/2020/12/07/C++-prime-plus-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="C prime plus 学习笔记">
+                <i class="fa fa-chevron-left"></i> C prime plus 学习笔记
               </a>
             
           </div>
@@ -339,10 +335,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020/04/10/%E8%A7%A3%E8%80%A6%E6%A8%A1%E5%BC%8F/" rel="prev" title="解耦模式">
-                解耦模式 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -495,7 +487,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#行为模式"><span class="nav-number">1.</span> <span class="nav-text">行为模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字节码"><span class="nav-number">1.1.</span> <span class="nav-text">字节码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子类沙箱"><span class="nav-number">1.2.</span> <span class="nav-text">子类沙箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型对象"><span class="nav-number">1.3.</span> <span class="nav-text">类型对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#射线"><span class="nav-number">1.</span> <span class="nav-text">射线</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ref-out"><span class="nav-number">2.</span> <span class="nav-text">ref out</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Collider"><span class="nav-number">3.</span> <span class="nav-text">Collider</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#坐标系"><span class="nav-number">4.</span> <span class="nav-text">坐标系</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#鼠标交互"><span class="nav-number">5.</span> <span class="nav-text">鼠标交互</span></a></li></ol></div>
             
 
           </div>

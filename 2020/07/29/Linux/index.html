@@ -79,14 +79,14 @@
 
 
 
-<meta name="description" content="行为模式">
+<meta name="description" content="Linux入门">
 <meta property="og:type" content="article">
-<meta property="og:title" content="行为模式">
-<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;04&#x2F;10&#x2F;%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F&#x2F;index.html">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http:&#x2F;&#x2F;yoursite.com&#x2F;2020&#x2F;07&#x2F;29&#x2F;Linux&#x2F;index.html">
 <meta property="og:site_name" content="Noire&#39;Blog">
-<meta property="og:description" content="行为模式">
+<meta property="og:description" content="Linux入门">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-04-09T16:57:38.842Z">
+<meta property="og:updated_time" content="2020-07-31T09:54:57.661Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -117,13 +117,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2020/04/10/行为模式/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/07/29/Linux/"/>
 
 
 
 
 
-  <title>行为模式 | Noire'Blog</title>
+  <title>Linux | Noire'Blog</title>
   
 
 
@@ -230,7 +230,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/10/%E8%A1%8C%E4%B8%BA%E6%A8%A1%E5%BC%8F/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/29/Linux/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Noire">
@@ -247,7 +247,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">行为模式</h1>
+          <h1 class="post-title" itemprop="name headline">Linux</h1>
         
 
         <div class="post-meta">
@@ -259,8 +259,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-10T00:23:29+08:00">
-                2020-04-10
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-07-29T16:58:14+08:00">
+                2020-07-29
               </time>
             
 
@@ -297,15 +297,175 @@
       
 
       
-        <h1 id="行为模式"><a href="#行为模式" class="headerlink" title="行为模式"></a>行为模式</h1><a id="more"></a>
-<h2 id="字节码"><a href="#字节码" class="headerlink" title="字节码"></a>字节码</h2><p>和原型模式类似，<strong>用数据存储行为</strong>，便于修改数据。但其实我也不是特别清楚，里面提到了lua是一种基于<strong>寄存器</strong>的虚拟机，看来还需要学习lua之后回头再看看。</p>
-<h2 id="子类沙箱"><a href="#子类沙箱" class="headerlink" title="子类沙箱"></a>子类沙箱</h2><p><strong>用一类基类提供的操作供子类使用</strong>。这是一种十分常见且常用的模式，甚至我们都不知道这算一种模式封装。不过即使是这样，也有一些技巧在里面。</p>
-<ul>
-<li>首先要积极利用<strong>辅助类</strong>来管理基类和子类的行为。比如声音播放器和动画播放器等我们应该用另外一个辅助类，减少耦合度</li>
-<li>善于利用基类<strong>构造器</strong>获得状态。在之前所做的设计模式中经常能看到传递一个对象来进行构造，且经常会利用到base关键字</li>
-<li>让某些状态<strong>静态化</strong>。例如粒子系统，这样就可以节省一部分内存</li>
-</ul>
-<h2 id="类型对象"><a href="#类型对象" class="headerlink" title="类型对象"></a>类型对象</h2><p>类似与享元模式，通过数据来生成<strong>相似</strong>品种的类，适用于行为变化不大的一些类，但缺点也很明显，无法对其行为进行扩展</p>
+        <h1 id="Linux入门"><a href="#Linux入门" class="headerlink" title="Linux入门"></a>Linux入门</h1><a id="more"></a> 
+
+<h4 id="重要的快捷键"><a href="#重要的快捷键" class="headerlink" title="重要的快捷键"></a>重要的快捷键</h4><table>
+<thead>
+<tr>
+<th align="center">按键</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">Tab</td>
+<td align="center">命令补全</td>
+</tr>
+<tr>
+<td align="center">Ctrl+c</td>
+<td align="center">终止程序</td>
+</tr>
+<tr>
+<td align="center">Ctrl+a</td>
+<td align="center">将光标移至输入行头，相当于<code>Home</code>键</td>
+</tr>
+<tr>
+<td align="center">Ctrl+e</td>
+<td align="center">将光标移至输入行末，相当于<code>End</code>键</td>
+</tr>
+<tr>
+<td align="center">↑</td>
+<td align="center">恢复之前输入过的命令</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="常见的命令行"><a href="#常见的命令行" class="headerlink" title="常见的命令行"></a>常见的命令行</h4><table>
+<thead>
+<tr>
+<th align="center">命令行</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">touch</td>
+<td align="center">创建一个名为file的文件</td>
+</tr>
+<tr>
+<td align="center">mkdir</td>
+<td align="center">创建一个空目录</td>
+</tr>
+<tr>
+<td align="center">cp</td>
+<td align="center">复制一个文件到指定目录</td>
+</tr>
+<tr>
+<td align="center">rm</td>
+<td align="center">删除一个文件</td>
+</tr>
+<tr>
+<td align="center">mv</td>
+<td align="center">移动文件/重命名文件</td>
+</tr>
+<tr>
+<td align="center">rename</td>
+<td align="center">批量重命名（正则）</td>
+</tr>
+<tr>
+<td align="center">cd</td>
+<td align="center">进入一个目录</td>
+</tr>
+<tr>
+<td align="center">cd ..</td>
+<td align="center">返回上一个目录</td>
+</tr>
+<tr>
+<td align="center">pwd</td>
+<td align="center">查看当前目录</td>
+</tr>
+<tr>
+<td align="center">cat/tac</td>
+<td align="center">用于读取指定文件的内容并打印到终端输出/倒序打印</td>
+</tr>
+<tr>
+<td align="center">| sort</td>
+<td align="center">将读取的文本进行一个字典排序再输出</td>
+</tr>
+<tr>
+<td align="center">ls</td>
+<td align="center">列出并显示当前目录下的文件</td>
+</tr>
+<tr>
+<td align="center">ehco $</td>
+<td align="center">读取一个变量的值</td>
+</tr>
+<tr>
+<td align="center">gcc</td>
+<td align="center">生成可执行文件</td>
+</tr>
+<tr>
+<td align="center">tar -x -C</td>
+<td align="center">打包压缩文件 -x 解包一个文件 -C 已存在目录 -z .gz格式</td>
+</tr>
+<tr>
+<td align="center">grep</td>
+<td align="center">配合正则表达式寻找</td>
+</tr>
+<tr>
+<td align="center">sort</td>
+<td align="center">排序命令</td>
+</tr>
+<tr>
+<td align="center">top/ps</td>
+<td align="center">查看进程</td>
+</tr>
+<tr>
+<td align="center">kill</td>
+<td align="center">杀死一个进程</td>
+</tr>
+</tbody></table>
+<hr>
+<table>
+<thead>
+<tr>
+<th align="center">通配符</th>
+<th align="center">含义</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">*</td>
+<td align="center">匹配 0 或多个字符</td>
+</tr>
+<tr>
+<td align="center">？</td>
+<td align="center">匹配任意一个字符</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h4><table>
+<thead>
+<tr>
+<th align="center">模式</th>
+<th align="center">作用</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">|</td>
+<td align="center">选择</td>
+</tr>
+<tr>
+<td align="center">+，？，*</td>
+<td align="center">数量限定（1或多，0或1，0或多）</td>
+</tr>
+<tr>
+<td align="center">（）</td>
+<td align="center">范围优先级</td>
+</tr>
+<tr>
+<td align="center">^</td>
+<td align="center">匹配输入字符串的开始位置</td>
+</tr>
+<tr>
+<td align="center">$</td>
+<td align="center">匹配输入字符串的结束位置</td>
+</tr>
+<tr>
+<td align="center">[xyz]，[A-Z]</td>
+<td align="center">匹配所包含的任意一个字符</td>
+</tr>
+<tr>
+<td align="center">[^xyz]</td>
+<td align="center">匹配未列出的任意字符</td>
+</tr>
+</tbody></table>
 
       
     </div>
@@ -330,8 +490,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/04/07/%E5%BA%8F%E5%88%97%E6%A8%A1%E5%BC%8F/" rel="next" title="序列模式">
-                <i class="fa fa-chevron-left"></i> 序列模式
+              <a href="/2020/05/23/Shader%E5%85%89%E7%85%A7%E6%A8%A1%E5%9E%8B/" rel="next" title="Shader光照模型">
+                <i class="fa fa-chevron-left"></i> Shader光照模型
               </a>
             
           </div>
@@ -340,8 +500,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2020/04/10/%E8%A7%A3%E8%80%A6%E6%A8%A1%E5%BC%8F/" rel="prev" title="解耦模式">
-                解耦模式 <i class="fa fa-chevron-right"></i>
+              <a href="/2020/12/07/C++-prime-plus-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="prev" title="C prime plus 学习笔记">
+                C prime plus 学习笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -495,7 +655,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#行为模式"><span class="nav-number">1.</span> <span class="nav-text">行为模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#字节码"><span class="nav-number">1.1.</span> <span class="nav-text">字节码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子类沙箱"><span class="nav-number">1.2.</span> <span class="nav-text">子类沙箱</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#类型对象"><span class="nav-number">1.3.</span> <span class="nav-text">类型对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux入门"><span class="nav-number">1.</span> <span class="nav-text">Linux入门</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#重要的快捷键"><span class="nav-number">1.0.0.1.</span> <span class="nav-text">重要的快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常见的命令行"><span class="nav-number">1.0.0.2.</span> <span class="nav-text">常见的命令行</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#正则表达式"><span class="nav-number">1.0.0.3.</span> <span class="nav-text">正则表达式</span></a></li></ol></li></ol></li></ol></li></ol></div>
             
 
           </div>

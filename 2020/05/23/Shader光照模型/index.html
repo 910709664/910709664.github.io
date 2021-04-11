@@ -86,7 +86,7 @@
 <meta property="og:site_name" content="Noire&#39;Blog">
 <meta property="og:description" content="Unity Shader中的光照模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-05-24T02:40:08.732Z">
+<meta property="og:updated_time" content="2020-05-29T08:48:49.669Z">
 <meta name="twitter:card" content="summary">
 
 
@@ -302,8 +302,11 @@
 <h2 id="BRDF光照模型"><a href="#BRDF光照模型" class="headerlink" title="BRDF光照模型"></a>BRDF光照模型</h2><h2 id="标准光照模型"><a href="#标准光照模型" class="headerlink" title="标准光照模型"></a>标准光照模型</h2><h3 id="自发光"><a href="#自发光" class="headerlink" title="自发光"></a>自发光</h3><p>$$<br>Cemissive=Memissive<br>$$</p>
 <h3 id="环境光"><a href="#环境光" class="headerlink" title="环境光"></a>环境光</h3><p>$$<br>Cambient=Gambient<br>$$</p>
 <h3 id="漫反射"><a href="#漫反射" class="headerlink" title="漫反射"></a>漫反射</h3><p>兰伯特定律<br>$$<br>Cdiffuse=(Clight·Mdiffuse)max(0,n,l)<br>$$<br>半兰伯特光照模型<br>$$<br>Cdiffuse=(Clight·Mdiffuse)(0.5(n·l)+0.5)<br>$$</p>
-<h3 id="高光反射"><a href="#高光反射" class="headerlink" title="高光反射"></a>高光反射</h3><p>Phone模型<br>$$<br>Cspecular=(Clight·Mspecular)max(0,v,r)^m<br>$$<br>$$<br>r=reflect(i,n)  i为入射方向，n为法线方向<br>$$<br>Blinn模型<br>$$<br>h=v+l/(|v+l|)<br>$$<br>$$<br>Cspecular=(Clight·Mspecular)max(0,n,h)^m<br>$$</p>
+<h3 id="高光反射"><a href="#高光反射" class="headerlink" title="高光反射"></a>高光反射</h3><p>Phone模型<br>$$<br>Cspecular=(Clight·Mspecular)max(0,v,r)^m,    v为视角方向,r为反射方向<br>$$<br>$$<br>r=reflect(i,n),  i为入射方向，n为法线方向<br>$$<br>Blinn模型<br>$$<br>h=v+l/(|v+l|),    l为光源方向<br>$$<br>$$<br>Cspecular=(Clight·Mspecular)max(0,n,h)^m ,n为法线方向<br>$$</p>
+<h3 id="凹凸映射"><a href="#凹凸映射" class="headerlink" title="凹凸映射"></a>凹凸映射</h3><h4 id="法线纹理"><a href="#法线纹理" class="headerlink" title="法线纹理"></a>法线纹理</h4><p>$$<br>pixel=(normal+1)/2<br>$$</p>
 <h3 id="Unity常用函数"><a href="#Unity常用函数" class="headerlink" title="Unity常用函数"></a>Unity常用函数</h3><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">UnityObjectToClipPos(vertex)<span class="comment">//将模型空间的坐标转换到裁剪空间</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">2</span></pre></td><td class="code"><pre><span class="line">UnityObjectToWorldNormal(v.normal)<span class="comment">//从模型空间的坐标转换世界空间的法线方向</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">3</span></pre></td><td class="code"><pre><span class="line">UnityWorldSpaceLightDir(float4 v)<span class="comment">//从模型空间的坐标获得该点到光源的光照方向，仅向前渲染，无归一化</span></span></pre></td></tr><tr><td class="gutter"><pre><span class="line">4</span></pre></td><td class="code"><pre><span class="line">UnityWorldSpaceViewDir(float4 v)<span class="comment">//从模型空间的坐标获得该点到摄像机的观察方向</span></span></pre></td></tr></table></figure>
+
+
       
     </div>
     
@@ -327,8 +330,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2020/05/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/" rel="next" title="计算机网络学习笔记">
-                <i class="fa fa-chevron-left"></i> 计算机网络学习笔记
+              <a href="/2020/05/11/%E5%B8%B8%E8%A7%81%E6%8E%92%E5%BA%8F/" rel="next" title="常见排序">
+                <i class="fa fa-chevron-left"></i> 常见排序
               </a>
             
           </div>
@@ -336,6 +339,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/07/29/Linux/" rel="prev" title="Linux">
+                Linux <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -442,7 +449,7 @@
               
                 <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">13</span>
+                  <span class="site-state-item-count">15</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -488,7 +495,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-Shader中的光照模型"><span class="nav-number">1.</span> <span class="nav-text">Unity Shader中的光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF光照模型"><span class="nav-number">1.1.</span> <span class="nav-text">BRDF光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准光照模型"><span class="nav-number">1.2.</span> <span class="nav-text">标准光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自发光"><span class="nav-number">1.2.1.</span> <span class="nav-text">自发光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境光"><span class="nav-number">1.2.2.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫反射"><span class="nav-number">1.2.3.</span> <span class="nav-text">漫反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高光反射"><span class="nav-number">1.2.4.</span> <span class="nav-text">高光反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity常用函数"><span class="nav-number">1.2.5.</span> <span class="nav-text">Unity常用函数</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Unity-Shader中的光照模型"><span class="nav-number">1.</span> <span class="nav-text">Unity Shader中的光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#BRDF光照模型"><span class="nav-number">1.1.</span> <span class="nav-text">BRDF光照模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#标准光照模型"><span class="nav-number">1.2.</span> <span class="nav-text">标准光照模型</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#自发光"><span class="nav-number">1.2.1.</span> <span class="nav-text">自发光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#环境光"><span class="nav-number">1.2.2.</span> <span class="nav-text">环境光</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#漫反射"><span class="nav-number">1.2.3.</span> <span class="nav-text">漫反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高光反射"><span class="nav-number">1.2.4.</span> <span class="nav-text">高光反射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#凹凸映射"><span class="nav-number">1.2.5.</span> <span class="nav-text">凹凸映射</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#法线纹理"><span class="nav-number">1.2.5.1.</span> <span class="nav-text">法线纹理</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Unity常用函数"><span class="nav-number">1.2.6.</span> <span class="nav-text">Unity常用函数</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -508,7 +515,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
